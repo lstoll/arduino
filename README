@@ -5,4 +5,13 @@ taken off the net - if you find something here that is yours and I haven't
 linked back to it (or you don't want it here) please let me know.
 
 ArduinoSketchbook/ - generic arduino sketchbook
+- WiiChuckProcessedToSerial/ - an app from the net, that processed nunchuck data
+								and outputs in on serial.
+								see: http://www.arduino.cc/playground/Main/WiiChuckClass
+-	- WiiChuck.h - header that contains nunchuck functionality. may want to reuse
+-	- WiiChuckProcessedToSerial.pde - the sketch itself
+
+
 ProcessingSketchbook/ - generic processing sketchbook
+- WiiChuckCube/WiiChuckCube.pde - app that will read data from the WiiChuckProcessedToSerial
+									app on an arduino and map it to a cube.
