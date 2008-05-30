@@ -1,0 +1,6 @@
+Linc's Arduino Libraries Repo
+=============================
+
+This is a copy of libraries I've pulled together and use, that needs to live in your arduino IDE libraries dir.
+
+You can find it at <http://github.com/lstoll/arduino-libraries>

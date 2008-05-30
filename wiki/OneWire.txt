@@ -1,0 +1,4 @@
+OneWire
+=======
+
+Simple interfacing protocol. The [[DS1820]] uses it, so its worth looking there for usage examples.

@@ -1,6 +1,11 @@
-New wiki!
+This wiki is intended to capture info about stuff being used.
 
-Make new pages by naming them using CamelCase or [[like this]].
 
-To follow a link, put your cursor over an underlined page name and hit Enter
-(not Return).
+
+Part specific info
+==================
+[[DS1820]] Temperature Sensor - DS18S20 is newer but has the same interface
+
+
+
+HowToUseThisWiki - has some instructions on usage, including syntax formatting

@@ -1,0 +1,152 @@
+Plain Text Wiki Bundle Info
+===========================
+
+Usage
+-----
+
+* Create a new directory
+* In TextMate, choose 'Create New Wiki' from the menu 
+  Bundles > Plain Text Wiki
+* Select your new directory. A file 'IndexPage.txt' will be created and opened
+* Reference new pages using CamelCase or [[like this]]. Page names will appear 
+  underlined
+* To follow a link, put the text cursor over a page name and hit Enter (not 
+  Return)
+
+Return to the index page at any time: Type shift+ctrl+i
+
+Insert a list of pages by typing 'pagelist' and hitting tab.
+
+
+Export as HTML
+--------------
+
+Choose 'Export Wiki as HTML' from the Plain Text Wiki commands menu. You will 
+be prompted for a directory where the Web pages will be saved (please make 
+sure it's empty).
+
+For converting text to HTML, Plain Text Wiki understands Markdown: 
+http://daringfireball.net/projects/markdown/syntax
+
+To customise the HTML of the wiki, add wiki-styles.css to the project 
+directory--it'll be copied to the export directory and included.
+
+For more control, add wiki-header.html and wiki-footer.html to the project 
+directory. Include the string "%s" in wiki-header.html to have that replaced 
+with the page title on export.
+
+
+Markdown: Syntax
+================
+
+Headings:
+
+# Heading Level 1
+
+OR
+
+Heading Level 1
+================
+
+## Heading Level 2
+
+OR
+
+Heading Level 2
+---------------
+
+--- 
+
+Paragraphs: 
+
+paragraphs can
+span multiple lines.
+to start a new paragraph:
+
+use one or more empty lines.
+
+---
+
+Emphasis:
+
+**bold**
+
+*italics*
+
+---
+
+Lists:
+
+
+- Item 1
+- Item 2 - with a para
+
+  some text
+
+- Item 3
+ - Subitem 1
+ - Subitem 2
+
+An ordered list:
+
+1. ordered list item 1
+2. item 2
+- you only need to put the first '1.' then each subsequent item can be as in an unordered list
+- item 4
+
+---
+
+Images:
+
+![RubyGreenBlue logo](/images/powered_by_bars.png "logo")
+
+reference style:
+
+![RubyGreenBlue logo][logo]
+
+[logo]: /images/powered_by_bars.png "logo"
+
+---
+
+Code:
+
+Inline `code` reference
+
+indent 4 spaces for whole blocks of code:
+
+
+    def initialize
+      SvnBlog::Base.username = 'secret'
+      SvnBlog::Base.password = 'secret'
+      SvnBlog::Base.articles_require :published => true
+      @blog = SvnBlog::Base.new("#{RAILS_ROOT}/public/blog")
+      configure_main_menu
+      configure_sub_menu
+    end
+
+
+---
+
+Links:
+
+a link to [RubyGreenBlue](http://rubygreenblue.com)
+
+Reference style:
+
+[RubyGreenBlue][rgb]
+
+[rgb]: http://rubygreenblue.com
+
+---
+
+Quoting:
+
+> some block quoted text
+>> some block quoted text
+
+
+---
+
+Horizontal line:
+
+---
