@@ -6,15 +6,20 @@ linked back to it (or you don't want it here) please let me know.
 
 ArduinoSketchbook/ - generic arduino sketchbook
 - WiiChuckProcessedToSerial/ - an app from the net, that processed nunchuck data
-								and outputs in on serial.
-								see: http://www.arduino.cc/playground/Main/WiiChuckClass
+			and outputs in on serial.
+			FROM: http://www.arduino.cc/playground/Main/WiiChuckClass
 -	- WiiChuck.h - header that contains nunchuck functionality. may want to reuse
 -	- WiiChuckProcessedToSerial.pde - the sketch itself
 
 - scanTWI - Sketch that will scan the i2c bus, and report what addresses have a device
 			on them over the serial port.
+			FROM: http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1192228140 + mods
+			
+- WiiChuckRawToSerial - prints nunchuck data over serial.
+			FROM: http://todbot.com/arduino/sketches/NunchuckPrint/NunchuckPrint.pde
 
 
 ProcessingSketchbook/ - generic processing sketchbook
 - WiiChuckCube/WiiChuckCube.pde - app that will read data from the WiiChuckProcessedToSerial
-									app on an arduino and map it to a cube.
+			app on an arduino and map it to a cube.
+			FROM: http://www.arduino.cc/playground/Main/WiiChuckClass
