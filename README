@@ -11,6 +11,9 @@ ArduinoSketchbook/ - generic arduino sketchbook
 -	- WiiChuck.h - header that contains nunchuck functionality. may want to reuse
 -	- WiiChuckProcessedToSerial.pde - the sketch itself
 
+- scanTWI - Sketch that will scan the i2c bus, and report what addresses have a device
+			on them over the serial port.
+
 
 ProcessingSketchbook/ - generic processing sketchbook
 - WiiChuckCube/WiiChuckCube.pde - app that will read data from the WiiChuckProcessedToSerial
