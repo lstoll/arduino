@@ -22,6 +22,11 @@ ArduinoSketchbook/ - generic arduino sketchbook
 			
 - WiiChuckRawToSerial - prints nunchuck data over serial.
 			FROM: http://todbot.com/arduino/sketches/NunchuckPrint/NunchuckPrint.pde
+			
+- DS1820ToSerial - talks to a DS1820 (and DS18x20 family of devices), and dumps both the raw 
+			information retrieved from the devices and the calculated temperature over serial.
+			Useful for general OneWire communication. Also has a Fritzing sketch for board
+			layout.
 
 
 ProcessingSketchbook/ - generic processing sketchbook
