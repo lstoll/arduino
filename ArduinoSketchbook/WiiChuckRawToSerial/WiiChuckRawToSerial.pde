@@ -12,7 +12,8 @@
 void setup()
 {
   Serial.begin(19200);
-  nunchuck_init(); // send the initilization handshake
+  //nunchuck_init(); // send the initilization handshake
+  nunchuck_init_with_power();
   Serial.print ("Finished setup\n");
 }
 
@@ -39,6 +40,24 @@ void nunchuck_init()
   Wire.send(0x40);		// sends memory address
   Wire.send(0x00);		// sends sent a zero.  
   Wire.endTransmission();	// stop transmitting
+}
+
+// General version of nunchuck_init_with_power()beginWithPower().
+// Call this first when a Nunchuck is plugged directly into Arduino
+static void nunchuck_init_with_power_pins(byte pwrpin, byte gndpin)
+{
+    DDRC |= _BV(pwrpin) | _BV(gndpin);  // make outputs
+    PORTC &=~ _BV(gndpin);
+    PORTC |=  _BV(pwrpin);
+    delay(100);  // wait for things to stabilize
+
+    nunchuck_init();
+}
+
+// Call this first when a Nunchuck is plugged directly into Arduino
+static void nunchuck_init_with_power()
+{
+  nunchuck_init_with_power_pins(PC3,PC2);
 }
 
 // Send a request for data to the nunchuck

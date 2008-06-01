@@ -74,6 +74,15 @@ class WiiChuck {
         boolean buttonC;
         void begin() 
         {
+          
+
+    DDRC |= _BV(PC3) | _BV(PC2);  // make outputs
+    PORTC &=~ _BV(PC2);
+    PORTC |=  _BV(PC3);
+    delay(100);  // wait for things to stabilize
+
+          
+          
             Wire.begin();
             cnt = 0;
             averageCounter = 0;
