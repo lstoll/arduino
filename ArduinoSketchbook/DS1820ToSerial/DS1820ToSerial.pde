@@ -78,8 +78,14 @@ void loop(void) {
 	// tell the device to initiate temperature check - and send power if device not already powered
 	ds.write(0x44,1); // 1 to provide power the device, 0 if it is already powered
 
-	// wait for calculation
-	delay(1000);     // maybe 750ms is enough, maybe not (set to 1000 now)
+	/* wait for calculation - this delay is required in 'parasite' power mode (i.e when we power
+	 * the device - when pin 3 is connected to GND and not 5V, and the preceding write) to give the
+	 * device time to charge its internal capacitor before performing calculation. If you have
+	 * directly connected the device to power (pin 3 to 5V) you can remove this delay, as the device
+	 * requires no charge-up time. (Also make sure the second parameter is set to 0 on the preceding
+	 * write statement).
+	 */
+	delay(1000);
 	// we might do a ds.depower() here, but the reset will take care of it.
 
 	present = ds.reset(); // reset the bus, and see if device asserts a presence pulse.
