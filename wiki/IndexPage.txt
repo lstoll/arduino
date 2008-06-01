@@ -1,9 +1,11 @@
 This wiki is intended to capture info about stuff being used.
 
-
+Technologies
+------------
+OneWire - Simple device bus
 
 Part specific info
-==================
+------------------
 [[DS1820]] Temperature Sensor - DS18S20 is newer but has the same interface
 
 

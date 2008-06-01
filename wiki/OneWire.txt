@@ -2,3 +2,38 @@ OneWire
 =======
 
 Simple interfacing protocol. The [[DS1820]] uses it, so its worth looking there for usage examples.
+
+The library in use here can be found in  [[arduino-libraries.git]]
+
+Create a OneWire object to work with
+------------------------------------
+
+	OneWire ds(<port number>);
+		
+Will create a instance (ds) of the OneWire interface on the passed in port number.
+Call this for communication to the device.
+
+Addressing (inc. library call)
+------------------------------
+On the bus, a call to the search ROM command (0xF0) will allow the retrieval
+of the addresses of the devices on the bus (very simplified, see the data 
+sheet and OneWire library for more information). For at least the DS1820
+(and possibly all OneWire devices - don't know) the device will respond with
+64 of data. The least significant (first 8 bits) contain the family code, i.e
+the type of device this is (multiple types of device can be on a single bus)
+the next 48 bits contain the unique device serial number - this can be used 
+to identify the exact device this is (useful when multiple devices from the
+same family are on the bus).
+
+Using in the library the OneWire library - 
+
+	// this will scan the bus until a device is found, and put its address
+	// into the byte array addr[] addr[0] is the family code, addr[1]-[6]
+	// is the unique device serial, and return true. If no device is found
+	// it will return false. Each time you call this, it will return the 
+	// next device on the bus. Once no device is found, it will return false
+	byte addr[8];
+	bool deviceFoundOnBus(addr);
+	
+	// calling this will reset the search, and start again.
+	ds.reset_search();
